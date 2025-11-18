@@ -1,0 +1,85 @@
+<%- include('partials/header') %>
+
+<div class="container" style="max-width: 900px; margin-top: 40px;">
+
+  <h2 style="margin-bottom: 25px; font-weight: 600; font-size: 28px; color: #222;">
+    Discover People
+  </h2>
+
+  <!-- GRID -->
+  <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 22px;
+  ">
+    <% users.forEach(user => { %>
+
+      <div style="
+          background: #fff;
+          padding: 20px;
+          border-radius: 14px;
+          border: 1px solid #e4e4e4;
+          text-align: center;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.06);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+      "
+      onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.12)';"
+      onmouseout="this.style.transform='none'; this.style.boxShadow='0 3px 6px rgba(0,0,0,0.06)';"
+      >
+
+        <!-- PROFILE PIC -->
+        <div style="
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        ">
+          <% if (user.profilePic) { %>
+            <img src="<%= user.profilePic %>" style="width: 100%; height: 100%; object-fit: cover;">
+          <% } else { %>
+            <span style="font-size: 40px; color: #666;">👤</span>
+          <% } %>
+        </div>
+
+        <!-- USERNAME -->
+        <h4 style="font-size: 18px; margin-top: 15px; margin-bottom: 4px; color: #222;">
+          <%= user.username %>
+        </h4>
+
+        <!-- EMAIL -->
+        <p style="font-size: 14px; color: #777; margin-bottom: 14px;">
+          <%= user.email %>
+        </p>
+
+        <!-- FOLLOW BUTTON -->
+        <div style="margin-bottom: 10px;">
+          <%- include('partials/followButton', { author: user, currentUser: currentUser }) %>
+        </div>
+
+        <!-- VIEW PROFILE -->
+        <div style="margin-top: 8px;">
+          <a href="/profile/<%= user.username %>"
+             style="
+                font-size: 14px; 
+                color: #3897f0; 
+                text-decoration: none; 
+                font-weight: 500;
+             ">
+            View Profile
+          </a>
+        </div>
+
+      </div>
+
+    <% }) %>
+  </div>
+</div>
+
+<script src="/js/postActions.js"></script>
+
+<%- include('partials/footer') %>

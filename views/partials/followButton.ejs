@@ -1,0 +1,11 @@
+
+<% if (author && currentUser && author._id.toString() !== currentUser._id.toString()) { %>
+
+    <button 
+        class="follow-btn btn btn-sm btn-primary"
+        data-username="<%= author.username %>">
+        <%= currentUser.following.includes(author._id) ? 'Unfollow' : 'Follow' %>
+    </button>
+
+<% } %>
+<script src="/js/followActions.js"></script>

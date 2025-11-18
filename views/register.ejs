@@ -1,0 +1,79 @@
+<%- include('partials/header') %>
+
+<div style="
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+">
+  <div style="
+      width: 100%;
+      max-width: 400px;
+      padding: 35px;
+      background: #ffffff;
+      border: 1px solid #dbdbdb;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      text-align: center;
+  ">
+
+    <!-- FORM TITLE -->
+    <h2 style="margin-bottom: 25px; font-weight: 600; letter-spacing: 0.5px;">
+      Register
+    </h2>
+
+    <!-- REGISTER FORM -->
+    <form action="/auth/register" method="POST" style="text-align: left;">
+
+      <div class="mb-3" style="margin-bottom: 15px;">
+        <label for="username" class="form-label" style="font-size: 14px; font-weight: 500;">
+          Username
+        </label>
+        <input type="text" class="form-control" id="username" name="username" required
+               style="padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+      </div>
+
+      <div class="mb-3" style="margin-bottom: 15px;">
+        <label for="email" class="form-label" style="font-size: 14px; font-weight: 500;">
+          Email Address
+        </label>
+        <input type="email" class="form-control" id="email" name="email" required
+               style="padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+      </div>
+
+      <div class="mb-3" style="margin-bottom: 20px;">
+        <label for="password" class="form-label" style="font-size: 14px; font-weight: 500;">
+          Password
+        </label>
+        <input type="password" class="form-control" id="password" name="password" required
+               style="padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+      </div>
+
+      <button type="submit" class="btn btn-primary"
+              style="
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                background: #3897f0;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 600;
+              ">
+        Register
+      </button>
+    </form>
+
+    <!-- SWITCH TO LOGIN -->
+    <p style="margin-top: 20px; font-size: 14px;">
+      Already have an account?
+      <a href="/auth/login" style="color: #3897f0; text-decoration: none; font-weight: 500;">
+        Login here
+      </a>
+    </p>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,42 @@
+<% post.comments.forEach(comment => { %>
+  <p id="comment-<%= comment._id %>"
+     style="
+       background: #f8f9fa;
+       padding: 10px 12px;
+       border-radius: 8px;
+       margin-bottom: 8px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       border: 1px solid #e1e1e1;
+     "
+  >
+    <span style="font-size: 15px;">
+      <strong style="color: #333;">
+        <%= comment.author.username %>:
+      </strong>
+      <span style="color: #555;">
+        <%= comment.text %>
+      </span>
+    </span>
+
+    <% if (username === comment.author.username || username === post.author.username) { %>
+      <button
+        class="delete-comment-btn"
+        data-post-id="<%= post._id %>"
+        data-comment-id="<%= comment._id %>"
+        style="
+          background: #dc3545;
+          color: white;
+          border: none;
+          padding: 4px 8px;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 12px;
+        "
+      >
+        🗑️
+      </button>
+    <% } %>
+  </p>
+<% }); %>

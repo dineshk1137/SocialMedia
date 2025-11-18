@@ -1,0 +1,174 @@
+/* GLOBAL ----------------------------------------------------- */
+body {
+    background: linear-gradient(to bottom right, #eef3ff, #f8f9ff);
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h3 {
+    font-weight: 700;
+    margin: 20px 0;
+    color: #2c3e50;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* MAIN CONTAINER --------------------------------------------- */
+main, .container {
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 10px;
+}
+
+/* CREATE / LOGOUT BUTTONS ------------------------------------ */
+.btn-primary, .btn-danger {
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+    background: #0d6efd;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.12);
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.15);
+}
+
+/* CARD --------------------------------------------------------- */
+.card {
+    background: #ffffff;
+    border: none;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    transition: transform .15s ease, box-shadow .15s ease;
+    border-left: 6px solid #6c63ff20;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #34495e;
+    margin-bottom: 12px;
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* POST INFO --------------------------------------------------- */
+.text-muted {
+    color: #7f8c8d !important;
+}
+
+/* ACTION BUTTONS --------------------------------------------- */
+.like-btn, 
+.comment-btn {
+    background: #f0f2ff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-right: 15px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.like-btn:hover {
+    background: #ffe3e6;
+    color: #ff3b30;
+    transform: scale(1.1);
+}
+
+.comment-btn:hover {
+    background: #dbe7ff;
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* COMMENTS BOX ------------------------------------------------ */
+.comment-box {
+    background: #f7f8ff;
+    padding: 18px;
+    border-radius: 14px;
+    border-left: 4px solid #6c63ff50;
+    margin-top: 15px;
+    animation: fadeIn .25s ease;
+}
+
+.comment-box p {
+    background: #ffffff;
+    padding: 10px 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* DELETE COMMENT BUTTON -------------------------------------- */
+.delete-comment-btn {
+    margin-left: 14px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    transition: all .15s ease;
+}
+
+.delete-comment-btn:hover {
+    background-color: #ff5b5b;
+}
+
+/* COMMENT FORM ------------------------------------------------ */
+.comment-form {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.comment-form input {
+    flex-grow: 1;
+    border-radius: 8px;
+}
+
+/* EFFECTS ----------------------------------------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE -------------------------------------------------- */
+@media (max-width: 600px) {
+    main, .container {
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+}
