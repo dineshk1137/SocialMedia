@@ -1,0 +1,39 @@
+<!-- LIKE BUTTON -->
+<button class="like-btn" data-post-id="<%= post._id %>" style="
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 3px 5px;
+        font-size: 22px;
+        transition: 0.15s ease-in-out;
+    ">
+  <span class="heart-icon<%= post.likes.includes(user._id) ? ' liked' : '' %>" id="heartIcon" style="font-size: 22px;">
+    ❤
+  </span>
+</button>
+
+<!-- LIKE COUNT -->
+<span class="like-count" data-post-id="<%= post._id %>" style="
+        font-size: 15px; 
+        color: #444;
+        font-weight: 500;
+        margin-left: 3px;
+    ">
+  <%= post.likes.length %>
+</span>
+
+<style>
+  .like-btn:hover .heart-icon {
+    transform: scale(1.15);
+  }
+
+  .heart-icon {
+    font-size: 22px;
+    color: #888;
+  }
+
+  .heart-icon.liked {
+    color: red;
+  }
+
+</style>
